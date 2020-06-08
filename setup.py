@@ -8,7 +8,7 @@ setup(
     version='1.0',
     author='VILLARD Lorenzo',
     author_email='villard.lorenzo.comptes@protonmail.com',
-    packages=[],
+    packages=[simplex],
     url = 'https://github.com/Nathnos/simplex',
     license='GNU GENERAL PUBLIC LICENSE Version 3',
     description='A linear solver in Python using the simplex algorithm.',

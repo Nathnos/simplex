@@ -2,7 +2,7 @@ import math
 
 import numpy as np
 
-from simplex_tools import *
+from simplex.tools import *
 
 def simplex(A, b, c, z, xB, pivot, show=False):
     #xB makes a feasible solution

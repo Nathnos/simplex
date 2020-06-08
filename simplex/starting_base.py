@@ -1,7 +1,7 @@
 import numpy as np
 
-from simplex_tools import *
-from simplex import simplex
+from simplex.tools import *
+from simplex.simplex_algo import simplex
 
 def find_starting_base(A, b, c, pivot, show):
     xB = np.arange(A.shape[0])

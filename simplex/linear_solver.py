@@ -6,9 +6,9 @@ import math
 
 import numpy as np
 
-from starting_base import find_starting_base, is_solution
-from simplex_tools import *
-from simplex import simplex
+from simplex.starting_base import find_starting_base, is_solution
+from simplex.tools import *
+from simplex.simplex_algo import simplex
 
 def linear_solver(A, b, c, c_type, xB=None, max=True, z=0, integer_sol=False,
     show=True, full_show=False):
@@ -16,6 +16,12 @@ def linear_solver(A, b, c, c_type, xB=None, max=True, z=0, integer_sol=False,
     Do all the preprocessing stuff for simplex algorithms
     """
     nb_var = A.shape[1]
+    if c_type is None:
+        nb_constraints = A.shape[0]
+        if max:
+            c_type = [-1 for _ in range(nb_constraints)]
+        else:
+            c_type = [1 for _ in range(nb_constraints)]
     A, c = transform(A, c, c_type)
     if max:
         c = -c
